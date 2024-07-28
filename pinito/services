@@ -1,0 +1,3 @@
+# WARNING! This file is valid Perl source.
+# Use `run()` function to start a process in foreground.
+#run("/usr/sbin/xinetd", "-dontfork");
