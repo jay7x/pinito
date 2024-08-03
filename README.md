@@ -12,5 +12,4 @@ This is unique init system to use with Linux (and maybe *BSD) containers, writte
 ## TODO
 
 - GHA to release a tarball
-- Ability to watch and restart the services spawned
 - Ability to filter signals forwarding
