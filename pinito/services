@@ -1,3 +1,6 @@
 # WARNING! This file is valid Perl source.
-# Use `run()` function to start a process in foreground.
-#run("/usr/sbin/xinetd", "-dontfork");
+# `service()` function 1st argument defines the run mode - supervised or non-supervised.
+# Use ONESHOT for one-shot commands that shouldn't be restarted on exit.
+# Use SUPERVISED for daemons that should be restarted when died.
+service(ONESHOT, "/usr/bin/logger", "Hello world!");
+service(SUPERVISED, "/usr/sbin/xinetd", "-dontfork");
