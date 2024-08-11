@@ -103,6 +103,7 @@ sub setup_syslog_server() {
     socket my $server, PF_UNIX, SOCK_DGRAM, 0 or die "socket: $!";
     unlink(SYSLOG_SERVER_SOCKET);
     bind $server, sockaddr_un(SYSLOG_SERVER_SOCKET) or die "bind: $!";
+    chmod 0666, SYSLOG_SERVER_SOCKET || die "chmod: $!";
     $server;
 }
 
