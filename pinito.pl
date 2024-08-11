@@ -205,6 +205,12 @@ chdir "/";
 setup_signal_handling();
 render_templates();
 
+# If anything is given in the command line arguments, then execute it instead
+if (scalar @ARGV > 0) {
+    exec { $ARGV[0] } @ARGV;
+    exit 1;
+}
+
 my $syslog_server = setup_syslog_server if (SYSLOG_SERVER_ENABLED);
 
 my $service_file = File::Spec->join( PINITO_DIR, "services" );
